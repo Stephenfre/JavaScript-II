@@ -38,18 +38,38 @@ last(items, function(lastitem) {
   console.log(lastitem);
 });
 
+// sumNums adds two numbers (x, y) and passes the result to the callback.
 function sumNums(x, y, cb) {
-  // sumNums adds two numbers (x, y) and passes the result to the callback.
+  return cb(x + y);
 }
+sumNums(10, 15, function(add) {
+  console.log(add);
+});
 
+// multiplyNums multiplies two numbers and passes the result to the callback.
 function multiplyNums(x, y, cb) {
-  // multiplyNums multiplies two numbers and passes the result to the callback.
+  return cb(x * y);
+}
+multiplyNums(25, 23, function(multiply) {
+  console.log(multiply);
+});
+
+// contains checks if an item is present inside of the given array/list.
+// Pass true to the callback if it is, otherwise pass false.
+function contains(item, list, cb) {
+  if (list.includes(item)) {
+    return cb(true);
+  } else {
+    return cb(false);
+  }
 }
 
-function contains(item, list, cb) {
-  // contains checks if an item is present inside of the given array/list.
-  // Pass true to the callback if it is, otherwise pass false.
-}
+contains("Notebook", items, function(item1) {
+  console.log(item1);
+});
+contains("candy", items, function(item1) {
+  console.log(item1);
+});
 
 /* STRETCH PROBLEM */
 
